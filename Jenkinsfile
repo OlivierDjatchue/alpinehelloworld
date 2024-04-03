@@ -11,7 +11,7 @@ pipeline{
             agent any
             steps{
                 script {
-                    sh 'docker build -t olivierdja/$INAGE_NAME:$INAGE_NAME' .
+                    sh 'docker build -t olivierdja/$INAGE_NAME:$INAGE_NAME .' 
                 }
             }
         }
