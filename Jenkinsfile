@@ -12,6 +12,7 @@ pipeline{
             steps{
                 script {
                     sh 'docker build -t olivierdja/$INAGE_NAME:$INAGE_NAME'
+                }
             }
         }
         stage('Run container'){
@@ -23,6 +24,7 @@ pipeline{
                     sleep 5
                     
                     '''
+                }
             }
         }
 
@@ -35,6 +37,7 @@ pipeline{
                     sleep 5
                     
                     '''
+                }
             }
         }
         stage('Clean container'){
@@ -45,6 +48,7 @@ pipeline{
                     docker stop $IMAGE_NAME
                     docker rm $IMAGE_NAME
                     '''
+                }
             }
         }
         stage('push imahe in staging and deploy'){
@@ -64,6 +68,7 @@ pipeline{
                     heroku container:release -a $STAGING web
                     
                     '''
+                }
             }
         }
         stage('push imahe in PRODUCTION and deploy'){
@@ -83,6 +88,7 @@ pipeline{
                     heroku container:release -a $PRODUCTION web
                     
                     '''
+                }
             }
         }
     }
