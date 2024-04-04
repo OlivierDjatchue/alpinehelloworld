@@ -57,7 +57,7 @@ pipeline{
             }
             agent any
             environment{
-                HEROKU_API_KEY = credentiales('heroku_api_key')
+                HEROKU_API_KEY = credentials('heroku_api_key')
             }
             steps{
                 script {
