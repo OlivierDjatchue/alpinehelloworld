@@ -45,8 +45,8 @@ pipeline{
             steps{
                 script {
                     sh '''
-                    docker stop $IMAGE_NAME
-                    docker rm $IMAGE_NAME
+                    docker stop $INAGE_NAME
+                    docker rm $INAGE_NAME
                     '''
                 }
             }
