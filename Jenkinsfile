@@ -73,7 +73,7 @@ pipeline{
         }
         stage('push imahe in PRODUCTION and deploy'){
             when{
-                expression {GIT_BRANCH==origin/master}
+                expression { GIT_BRANCH == 'origin/master'}
             }
             agent any
             environment{
