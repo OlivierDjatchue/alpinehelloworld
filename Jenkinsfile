@@ -15,6 +15,18 @@ pipeline{
                 }
             }
         }
+        stage('Delete container if exist'){
+            agent any
+            steps{
+                script {
+                    sh '''
+                    docker rm -rf $INAGE_NAME || echo "Container does not exist"
+                    
+                    
+                    '''
+                }
+            }
+        }
         stage('Run container'){
             agent any
             steps{
