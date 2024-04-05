@@ -33,7 +33,7 @@ pipeline{
             steps{
                 script {
                     sh '''
-                    curl http://54.90.227.61:83 | grep "Olivier Djatchue"
+                    curl http://54.234.225.106:83 | grep "Olivier Djatchue"
                     sleep 5
                     
                     '''
