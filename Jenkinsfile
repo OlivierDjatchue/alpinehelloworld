@@ -22,7 +22,6 @@ pipeline{
                     sh '''
                     docker rm -rf $INAGE_NAME || echo "Container does not exist"
                     
-                    
                     '''
                 }
             }
