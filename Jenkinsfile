@@ -4,6 +4,7 @@ pipeline{
         INAGE_TAG ="latest"
         STAGING = "olivierbana-staging"
         PRODUCTION = "olivierbana-prod"
+        ENDPOINT ="http://18.206.168.91"
     }
     agent none
     stages{
@@ -31,7 +32,7 @@ pipeline{
             steps{
                 script {
                     sh '''
-                    docker run --name=$INAGE_NAME -dp 83:5000 -e PORT=5000 olivierdja/$INAGE_NAME:$INAGE_NAME
+                    docker run --name=$INAGE_NAME -dp 84:5000 -e PORT=5000 olivierdja/$INAGE_NAME:$INAGE_NAME
                     sleep 5
                     
                     '''
@@ -44,7 +45,7 @@ pipeline{
             steps{
                 script {
                     sh '''
-                    curl http://54.234.225.106:83 | grep "Olivier Djatchue"
+                    curl $ENDPOINT:84 | grep "Olivier Djatchue"
                     sleep 5
                     
                     '''
